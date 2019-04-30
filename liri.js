@@ -1,8 +1,10 @@
 require("dotenv").config();
+var term = require( 'terminal-kit' ).terminal ;
 var Spotify = require("node-spotify-api");
 var axios = require("axios");
 var fs = require("fs");
 var keys = require("./keys");
+var logFileName = "./log.txt"
 
 // var spotify = new Spotify("./keys.js")
 
@@ -40,17 +42,15 @@ function doMovieThings(secondCommand) {
     axios
         .get(movieURL)
         .then(function (response) {
-            // If the axios was successful...
-            // Then log the body from the site!
-            console.log(response.data);
+            processMovieData(response.data);
         })
         .catch(function (error) {
             if (error.response) {
                 // The request was made and the server responded with a status code
                 // that falls out of the range of 2xx
-                console.log(error.response.data);
-                console.log(error.response.status);
-                console.log(error.response.headers);
+                logger(error.response.data);
+                logger(error.response.status);
+                logger(error.response.headers);
             } else if (error.request) {
                 // The request was made but no response was received
                 // `error.request` is an object that comes back with details pertaining to the error that occurred.
@@ -62,7 +62,35 @@ function doMovieThings(secondCommand) {
             console.log(error.config);
         });
 }
-
+function processMovieData(response) {
+    logger("Title : " + response.Title);
+    logger("Year : " + response.Year);
+    logger("IMDB Rating : " + response.Ratings[0].Value);
+    logger("Rotten Tomato Ratig : " + response.Ratings[1].Value);
+    logger("Country : " + response.Country);
+    logger("Language : " + response.Language);
+    logger("Plot : " + response.Plot);
+    logger("Actors : " + response.Actors);
+}
 function runDefault() {
 
+}
+
+function logger(dataToWrite, whereToWrite) {
+    if (whereToWrite === 0) {
+        console.log(dataToWrite);
+    } else if (whereToWrite === 1) {
+        writeToFile(dataToWrite, logFileName);
+    } else {
+        console.log(dataToWrite);
+        writeToFile(dataToWrite, logFileName);
+    }
+}
+
+function writeToFile(dataToWrite, fileName) {
+    fs.appendFile(fileName, dataToWrite + "\n", function (error) {
+        if (error) {
+            throw error;
+        }
+    })
 }
