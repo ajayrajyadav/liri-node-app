@@ -16,3 +16,147 @@ Country : USA
 Language : English, Norwegian
 Plot : When the newly-crowned Queen Elsa accidentally uses her power to turn things into ice to curse her home in infinite winter, her sister Anna teams up with a mountain man, his playful reindeer, and a snowman to change the weather condition.
 Actors : Kristen Bell, Idina Menzel, Jonathan Groff, Josh Gad
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+undefined
+Frozen
+2013
+7.5/10
+90%
+English, Norwegian
+When the newly-crowned Queen Elsa accidentally uses her power to turn things into ice to curse her home in infinite winter, her sister Anna teams up with a mountain man, his playful reindeer, and a snowman to change the weather condition.
+USA
+Kristen Bell, Idina Menzel, Jonathan Groff, Josh Gad
+Frozen
+USA
+English, Norwegian
+When the newly-crowned Queen Elsa accidentally uses her power to turn things into ice to curse her home in infinite winter, her sister Anna teams up with a mountain man, his playful reindeer, and a snowman to change the weather condition.
+Kristen Bell, Idina Menzel, Jonathan Groff, Josh Gad
+2013
+90%
+7.5/10
+Frozen
+2013
+7.5/10
+English, Norwegian
+Kristen Bell, Idina Menzel, Jonathan Groff, Josh Gad
+90%
+When the newly-crowned Queen Elsa accidentally uses her power to turn things into ice to curse her home in infinite winter, her sister Anna teams up with a mountain man, his playful reindeer, and a snowman to change the weather condition.
+USA
+Frozen
+7.5/10
+2013
+English, Norwegian
+USA
+Kristen Bell, Idina Menzel, Jonathan Groff, Josh Gad
+When the newly-crowned Queen Elsa accidentally uses her power to turn things into ice to curse her home in infinite winter, her sister Anna teams up with a mountain man, his playful reindeer, and a snowman to change the weather condition.
+90%
+Frozen
+Frozen
+Frozen
+^gYear : ^b^+
+^rError Occured: ^+TypeError: Cannot read property 'artists' of undefined
+
+^rError Occured: ^+TypeError: Cannot read property 'artists' of undefined
+
+^rError Occured: ^+TypeError: Cannot read property 'artists' of undefined
+
+^rError Occured: ^+TypeError: Cannot read property 'artists' of undefined
+
+^rError Occured: ^+TypeError: Cannot read property 'artists' of undefined
+
+^rError Occured: ^+TypeError: Cannot read property 'artists' of undefined
+
+^rError Occured: ^+TypeError: Cannot read property 'artists' of undefined
+
+^rError Occured: ^+TypeError: Cannot read property 'artists' of undefined
+
+^rError Occured: ^+TypeError: Cannot read property 'artists' of undefined
+
+^rError Occured: ^+StatusCodeError: 503 - undefined
+
+^rError Occured: ^+TypeError: Cannot read property 'artists' of undefined
+
+^gArtist(s) : ^b^+[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+^rError Occured: ^+TypeError: Cannot read property 'artists' of undefined
+
+^gArtist(s) : ^b^+[object Object]
+^rError Occured: ^+TypeError: Cannot read property 'artists' of undefined
+
+^gArtist(s) : ^b^+undefined
+^rError Occured: ^+TypeError: Cannot read property 'albums' of undefined
+
+^gArtist(s) : ^b^+[object Object]
+^rError Occured: ^+TypeError: Cannot read property 'albums' of undefined
+
+^gArtist(s) : ^b^+Harry Styles
+^gThe Song Name : ^b^+Sign of the Times
+^gAlbum Name: ^b^+Harry Styles
+^gArtist(s) : ^b^+Karaoke Box
+
+^gThe Song Name : ^b^+I Saw the Sign (Karaoke Playback with Lead Vocals) [Made Famous by Ace of Base]
+
+^gAlbum Name: ^b^+Karaoke Box: Reggae Greatest Hits
+
+^gArtist(s) : ^b^+Karaoke Box
+
+^gThe Song Name : ^b^+I Saw the Sign (Karaoke Playback with Lead Vocals) [Made Famous by Ace of Base]
+
+^gAlbum Name: ^b^+Karaoke Box: Reggae Greatest Hits
+
+^gThe Song Name : ^b^+Sign of the Times
+
+^gArtist(s) : ^b^+Harry Styles
+
+^gAlbum Name: ^b^+Harry Styles
+
+^gArtist(s) : ^b^+Harry Styles
+
+^gThe Song Name : ^b^+Sign of the Times
+
+^gAlbum Name: ^b^+Harry Styles
+
+^gArtist(s) : ^b^+Harry Styles
+
+^gThe Song Name : ^b^+Sign of the Times
+
+^gAlbum Name: ^b^+Harry Styles
+
+^gPreview Link : ^b^+https://p.scdn.co/mp3-preview/af237206f611b722f48620ece049aff3b8650e77?cid=a6a3b1625c17427cb4076df7536fc63f
+^gArtist(s) : ^b^+Harry Styles
+
+^gAlbum Name: ^b^+Harry Styles
+
+^gPreview Link : ^b^+https://p.scdn.co/mp3-preview/af237206f611b722f48620ece049aff3b8650e77?cid=a6a3b1625c17427cb4076df7536fc63f
+
+^gThe Song Name : ^b^+Sign of the Times
+
