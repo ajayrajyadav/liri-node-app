@@ -4,9 +4,14 @@ var Spotify = require("node-spotify-api");
 var axios = require("axios");
 var fs = require("fs");
 var keys = require("./keys");
+var moment = require("moment");
 var logFileName = "./log.txt"
-var separator =
-  "^g============================================================================^\n";
+var randomTxtFile = "./random.txt"
+var separator = "============================================================================";
+var bandSeparator = "----------------------------------------------------------------------------";
+const log = console.log;
+
+
 
 // var spotifyClient = new Spotify("./keys.js")
 var spotifyClient = new Spotify(keys.spotify)
@@ -39,32 +44,82 @@ function main(command, secondCommand) {
     }
 }
 
+function doWhatItSays(secondCommand){
+    fs.readFile(randomTxtFile, "utf8", function(error, response){
+        if(error){
+            console.log("Error", error.message);
+            // throw error;
+        }else{
+            let commands = response.split("\n");
+            log(commands)
+            commands.forEach(elem => {
+                log("in here")
+                let params = elem.split(",")
+                main(params[0].trim(), params[1].trim());
+                // console.log(params);
+            });
+            
+        }
+    })
+}
+
 function doSpotifyThings(secondCommand){
     spotifyClient.search({type: "track", query: secondCommand}, function(
         err,
         data
     ){
         if(err){
-            logger("^rError Occured: ^+" + err + "\n");
+            logger("Error Occured: " + err);
             return;
         }else if(data.tracks.items.length >0){
-            logger(separator, 0);
-            logger("^gArtist(s) : ^b^+" + data.tracks.items[0].album.artists[0].name +"\n");
-            logger("^gThe Song Name : ^b^+" + data.tracks.items[0].name +"\n");
-            logger("^gAlbum Name: ^b^+"+ data.tracks.items[0].album.name +"\n")
+            logger("",separator);
+            logger("Artist(s) : " , data.tracks.items[0].album.artists[0].name);
+            logger("The Song Name : " , data.tracks.items[0].name);
+            logger("Album Name: " , data.tracks.items[0].album.name)
             if(data.tracks.items[0].preview_url === "null"){
                 logger("^yPreview link is not available fro spotify");
             }else{
-                logger("^gPreview Link : ^b^+" + data.tracks.items[0].preview_url + "\n");
+                logger("Preview Link : " , data.tracks.items[0].preview_url);
             }
-            logger(separator, 0);
+            logger("", separator);
         }
     })
 
 }
 
 function doBandThings(secondCommand){
+
+    // Querying the bandsintown api for the selected artist, the ?app_id parameter is required, but can equal anything
+    var queryURL = "https://rest.bandsintown.com/artists/" + secondCommand + "/events?app_id=codingbootcamp";
+    console.log(queryURL);
     
+    axios
+    .get(queryURL)
+    .then(function (response) {
+        // console.log(response.data[0].venue);
+        processBandData(response.data);
+        // processMovieData(response.data);
+    })
+    .catch(function (error) {
+        if (error.response) {
+            logger(error.response.data);
+            logger(error.response.status);
+            logger(error.response.headers);
+        } else if (error.request) {
+            console.log(error.request);
+        } else {
+            console.log("Error", error.message);
+        }
+        console.log(error.config);
+    });
+}
+function processBandData(response){
+    response.forEach(element => {
+        logger("",bandSeparator)
+        logger("Venue : " , element.venue.name);
+        logger("Location: ", element.venue.city + ", "+ element.venue.region + ", " + element.venue.country)
+        logger("Date of the Event: " , moment(element.datetime).format("dddd, MMMM Do YYYY, h:mm:ss a"))
+    });    
 }
 
 function doMovieThings(secondCommand) {
@@ -89,33 +144,33 @@ function doMovieThings(secondCommand) {
 }
 function processMovieData(response) {
     logger(separator, 0);
-    logger("^gTitle : ^m^+"+ response.Title + "\n", 0);
-    logger("^gYear : ^b^+" + response.Year + "\n", 0);
-    logger("^gIMDB Rating : ^b^+" + response.Ratings[0].Value + "\n", 0);
-    logger("^gRotten Tomato Ratig : ^b^+" + response.Ratings[1].Value + "\n", 0);
-    logger("^gCountry : ^b^+" + response.Country + "\n", 0);
-    logger("^gLanguage : ^b^+" + response.Language + "\n", 0);
-    logger("^gPlot : ^b^+" + response.Plot + "\n", 0);
-    logger("^gActors : ^b^+" + response.Actors + "\n", 0);
+    logger("Title : " , response.Title);
+    logger("Year : " , response.Year);
+    logger("IMDB Rating : " , response.Ratings[0].Value);
+    logger("Rotten Tomato Ratig : " , response.Ratings[1].Value);
+    logger("Country : " , response.Country);
+    logger("Language : " , response.Language);
+    logger("Plot : " , response.Plot);
+    logger("Actors : " , response.Actors);
     logger(separator,0);
 }
 function runDefault() {
 
 }
 
-function logger(dataToWrite, whereToWrite) {
+function logger(prefix, dataToWrite, whereToWrite) {
     if (whereToWrite === 0) {
-        term(dataToWrite)
+        term("^g" + prefix + "^b^+" + dataToWrite + "\n")
     } else if (whereToWrite === 1) {
-        writeToFile(dataToWrite, logFileName);
+        writeToFile(prefix + dataToWrite + "\n", logFileName);
     } else {
-        term(dataToWrite)
-        writeToFile(dataToWrite, logFileName);
+        term("^g" + prefix + "^b^+" + dataToWrite + "\n")
+        writeToFile(prefix + dataToWrite + "\n", logFileName);
     }
 }
 
 function writeToFile(dataToWrite, fileName) {
-    fs.appendFile(fileName, dataToWrite + "\n", function (error) {
+    fs.appendFile(fileName, dataToWrite, function (error) {
         if (error) {
             throw error;
         }
