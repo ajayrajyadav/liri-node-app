@@ -1,162 +1,18 @@
-Title : undefined
-Title : Frozen
-Title : Frozen
-Year : 2013
-Country : USA
-Language : English, Norwegian
-Actors : Kristen Bell, Idina Menzel, Jonathan Groff, Josh Gad
-Rotten Tomato Ratig : 90%
-Plot : When the newly-crowned Queen Elsa accidentally uses her power to turn things into ice to curse her home in infinite winter, her sister Anna teams up with a mountain man, his playful reindeer, and a snowman to change the weather condition.
-IMDB Rating : 7.5/10
-Title : Frozen
-Year : 2013
-IMDB Rating : 7.5/10
-Rotten Tomato Ratig : 90%
-Country : USA
-Language : English, Norwegian
-Plot : When the newly-crowned Queen Elsa accidentally uses her power to turn things into ice to curse her home in infinite winter, her sister Anna teams up with a mountain man, his playful reindeer, and a snowman to change the weather condition.
-Actors : Kristen Bell, Idina Menzel, Jonathan Groff, Josh Gad
-undefined
-undefined
-undefined
-undefined
-undefined
-undefined
-undefined
-undefined
-undefined
-undefined
-undefined
-undefined
-undefined
-undefined
-undefined
-undefined
-undefined
-undefined
-undefined
-undefined
-undefined
-undefined
-undefined
-undefined
-undefined
-undefined
-undefined
-undefined
-undefined
-undefined
-undefined
-undefined
-Frozen
-2013
-7.5/10
-90%
-English, Norwegian
-When the newly-crowned Queen Elsa accidentally uses her power to turn things into ice to curse her home in infinite winter, her sister Anna teams up with a mountain man, his playful reindeer, and a snowman to change the weather condition.
-USA
-Kristen Bell, Idina Menzel, Jonathan Groff, Josh Gad
-Frozen
-USA
-English, Norwegian
-When the newly-crowned Queen Elsa accidentally uses her power to turn things into ice to curse her home in infinite winter, her sister Anna teams up with a mountain man, his playful reindeer, and a snowman to change the weather condition.
-Kristen Bell, Idina Menzel, Jonathan Groff, Josh Gad
-2013
-90%
-7.5/10
-Frozen
-2013
-7.5/10
-English, Norwegian
-Kristen Bell, Idina Menzel, Jonathan Groff, Josh Gad
-90%
-When the newly-crowned Queen Elsa accidentally uses her power to turn things into ice to curse her home in infinite winter, her sister Anna teams up with a mountain man, his playful reindeer, and a snowman to change the weather condition.
-USA
-Frozen
-7.5/10
-2013
-English, Norwegian
-USA
-Kristen Bell, Idina Menzel, Jonathan Groff, Josh Gad
-When the newly-crowned Queen Elsa accidentally uses her power to turn things into ice to curse her home in infinite winter, her sister Anna teams up with a mountain man, his playful reindeer, and a snowman to change the weather condition.
-90%
-Frozen
-Frozen
-Frozen
-^gYear : ^b^+
-^rError Occured: ^+TypeError: Cannot read property 'artists' of undefined
-
-^rError Occured: ^+TypeError: Cannot read property 'artists' of undefined
-
-^rError Occured: ^+TypeError: Cannot read property 'artists' of undefined
-
-^rError Occured: ^+TypeError: Cannot read property 'artists' of undefined
-
-^rError Occured: ^+TypeError: Cannot read property 'artists' of undefined
-
-^rError Occured: ^+TypeError: Cannot read property 'artists' of undefined
-
-^rError Occured: ^+TypeError: Cannot read property 'artists' of undefined
-
-^rError Occured: ^+TypeError: Cannot read property 'artists' of undefined
-
-^rError Occured: ^+TypeError: Cannot read property 'artists' of undefined
-
-^rError Occured: ^+StatusCodeError: 503 - undefined
-
-^rError Occured: ^+TypeError: Cannot read property 'artists' of undefined
-
-^gArtist(s) : ^b^+[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
-^rError Occured: ^+TypeError: Cannot read property 'artists' of undefined
-
-^gArtist(s) : ^b^+[object Object]
-^rError Occured: ^+TypeError: Cannot read property 'artists' of undefined
-
-^gArtist(s) : ^b^+undefined
-^rError Occured: ^+TypeError: Cannot read property 'albums' of undefined
-
-^gArtist(s) : ^b^+[object Object]
-^rError Occured: ^+TypeError: Cannot read property 'albums' of undefined
-
-^gArtist(s) : ^b^+Harry Styles
-^gThe Song Name : ^b^+Sign of the Times
-^gAlbum Name: ^b^+Harry Styles
-^gArtist(s) : ^b^+Karaoke Box
-
-^gThe Song Name : ^b^+I Saw the Sign (Karaoke Playback with Lead Vocals) [Made Famous by Ace of Base]
-
-^gAlbum Name: ^b^+Karaoke Box: Reggae Greatest Hits
-
-^gArtist(s) : ^b^+Karaoke Box
-
-^gThe Song Name : ^b^+I Saw the Sign (Karaoke Playback with Lead Vocals) [Made Famous by Ace of Base]
-
-^gAlbum Name: ^b^+Karaoke Box: Reggae Greatest Hits
-
-^gThe Song Name : ^b^+Sign of the Times
-
-^gArtist(s) : ^b^+Harry Styles
-
-^gAlbum Name: ^b^+Harry Styles
-
-^gArtist(s) : ^b^+Harry Styles
-
-^gThe Song Name : ^b^+Sign of the Times
-
-^gAlbum Name: ^b^+Harry Styles
-
-^gArtist(s) : ^b^+Harry Styles
-
-^gThe Song Name : ^b^+Sign of the Times
-
-^gAlbum Name: ^b^+Harry Styles
-
-^gPreview Link : ^b^+https://p.scdn.co/mp3-preview/af237206f611b722f48620ece049aff3b8650e77?cid=a6a3b1625c17427cb4076df7536fc63f
-^gArtist(s) : ^b^+Harry Styles
-
-^gAlbum Name: ^b^+Harry Styles
-
-^gPreview Link : ^b^+https://p.scdn.co/mp3-preview/af237206f611b722f48620ece049aff3b8650e77?cid=a6a3b1625c17427cb4076df7536fc63f
-
-^gThe Song Name : ^b^+Sign of the Times
-
+============================================================================
+Preview Link : https://p.scdn.co/mp3-preview/e72a05dc3f69c891e3390c3ceaa77fad02f6b5f6?cid=a6a3b1625c17427cb4076df7536fc63f
+============================================================================
+Artist(s) : Backstreet Boys
+Album Name: The Hits--Chapter One
+The Song Name : I Want It That Way
+============================================================================
+Album Name: Harry Styles
+============================================================================
+The Song Name : Sign of the Times
+Artist(s) : Harry Styles
+Preview Link : https://p.scdn.co/mp3-preview/af237206f611b722f48620ece049aff3b8650e77?cid=a6a3b1625c17427cb4076df7536fc63f
+============================================================================
+Album Name: The Sign (US Album) [Remastered]
+Preview Link : https://p.scdn.co/mp3-preview/4c463359f67dd3546db7294d236dd0ae991882ff?cid=a6a3b1625c17427cb4076df7536fc63f
+Artist(s) : Ace of Base
+The Song Name : The Sign
+============================================================================

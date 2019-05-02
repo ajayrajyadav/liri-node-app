@@ -1,5 +1,5 @@
 require("dotenv").config();
-var term = require( 'terminal-kit' ).terminal ;
+var term = require('terminal-kit').terminal;
 var Spotify = require("node-spotify-api");
 var axios = require("axios");
 var fs = require("fs");
@@ -10,7 +10,7 @@ var randomTxtFile = "./random.txt"
 var separator = "============================================================================";
 var bandSeparator = "----------------------------------------------------------------------------";
 const log = console.log;
-
+var fileToWriteArray = [];
 
 
 // var spotifyClient = new Spotify("./keys.js")
@@ -42,86 +42,85 @@ function main(command, secondCommand) {
             runDefault();
             break;
     }
+    writeToFile(fileToWriteArray, logFileName);
 }
-
-function doWhatItSays(secondCommand){
-    fs.readFile(randomTxtFile, "utf8", function(error, response){
-        if(error){
-            console.log("Error", error.message);
+//this function is for "do-what-it-says"
+function doWhatItSays(secondCommand) {
+    fs.readFile(randomTxtFile, "utf8", function (error, response) {
+        if (error) {
+            log("Error", error.message);
             // throw error;
-        }else{
+        } else {
             let commands = response.split("\n");
-            log(commands)
             commands.forEach(elem => {
-                log("in here")
                 let params = elem.split(",")
                 main(params[0].trim(), params[1].trim());
-                // console.log(params);
             });
-            
+
         }
     })
 }
 
-function doSpotifyThings(secondCommand){
-    spotifyClient.search({type: "track", query: secondCommand}, function(
-        err,
-        data
-    ){
-        if(err){
-            logger("Error Occured: " + err);
-            return;
-        }else if(data.tracks.items.length >0){
-            logger("",separator);
-            logger("Artist(s) : " , data.tracks.items[0].album.artists[0].name);
-            logger("The Song Name : " , data.tracks.items[0].name);
-            logger("Album Name: " , data.tracks.items[0].album.name)
-            if(data.tracks.items[0].preview_url === "null"){
-                logger("^yPreview link is not available fro spotify");
-            }else{
-                logger("Preview Link : " , data.tracks.items[0].preview_url);
-            }
-            logger("", separator);
-        }
-    })
+//this function is for "spotify-this"
+function doSpotifyThings(secondCommand) {
 
+    spotifyClient
+        .search({ type: "track", query: secondCommand })
+        .then(function (response) {
+            // log(response);
+            processSpotifyData(response)
+        })
+        .catch(function (err) {
+            log(err);
+        })
+}
+function processSpotifyData(data) {
+    if (data.tracks.items.length > 0) {
+        logger("", separator);
+        logger("Artist(s) : ", data.tracks.items[0].album.artists[0].name);
+        logger("The Song Name : ", data.tracks.items[0].name);
+        logger("Album Name: ", data.tracks.items[0].album.name)
+        if (data.tracks.items[0].preview_url === "null") {
+            logger("^yPreview link is not available fro spotify");
+        } else {
+            logger("Preview Link : ", data.tracks.items[0].preview_url);
+        }
+        logger("", separator);
+    }
 }
 
-function doBandThings(secondCommand){
-
+//this function is for "concert-this"
+function doBandThings(secondCommand) {
     // Querying the bandsintown api for the selected artist, the ?app_id parameter is required, but can equal anything
     var queryURL = "https://rest.bandsintown.com/artists/" + secondCommand + "/events?app_id=codingbootcamp";
-    console.log(queryURL);
-    
     axios
-    .get(queryURL)
-    .then(function (response) {
-        // console.log(response.data[0].venue);
-        processBandData(response.data);
-        // processMovieData(response.data);
-    })
-    .catch(function (error) {
-        if (error.response) {
-            logger(error.response.data);
-            logger(error.response.status);
-            logger(error.response.headers);
-        } else if (error.request) {
-            console.log(error.request);
-        } else {
-            console.log("Error", error.message);
-        }
-        console.log(error.config);
+        .get(queryURL)
+        .then(function (response) {
+            processBandData(response.data);
+        })
+        .catch(function (error) {
+            if (error.response) {
+                logger(error.response.data);
+                logger(error.response.status);
+                logger(error.response.headers);
+            } else if (error.request) {
+                console.log(error.request);
+            } else {
+                console.log("Error", error.message);
+            }
+            console.log(error.config);
+        });
+}
+function processBandData(response) {
+    response.forEach(element => {
+        logger("", bandSeparator)
+        logger("Venue : ", element.venue.name);
+        logger("Location: ", element.venue.city + ", " + element.venue.region + ", " + element.venue.country)
+        logger("Date of the Event: ", moment(element.datetime).format("dddd, MMMM Do YYYY, h:mm:ss a"))
     });
 }
-function processBandData(response){
-    response.forEach(element => {
-        logger("",bandSeparator)
-        logger("Venue : " , element.venue.name);
-        logger("Location: ", element.venue.city + ", "+ element.venue.region + ", " + element.venue.country)
-        logger("Date of the Event: " , moment(element.datetime).format("dddd, MMMM Do YYYY, h:mm:ss a"))
-    });    
-}
 
+//this function is for "movie-this"
 function doMovieThings(secondCommand) {
     var movieURL = "http://www.omdbapi.com/?apikey=trilogy&t=" + secondCommand;
     axios
@@ -144,31 +143,32 @@ function doMovieThings(secondCommand) {
 }
 function processMovieData(response) {
     logger(separator, 0);
-    logger("Title : " , response.Title);
-    logger("Year : " , response.Year);
-    logger("IMDB Rating : " , response.Ratings[0].Value);
-    logger("Rotten Tomato Ratig : " , response.Ratings[1].Value);
-    logger("Country : " , response.Country);
-    logger("Language : " , response.Language);
-    logger("Plot : " , response.Plot);
-    logger("Actors : " , response.Actors);
-    logger(separator,0);
-}
-function runDefault() {
-
+    logger("Title : ", response.Title);
+    logger("Year : ", response.Year);
+    logger("IMDB Rating : ", response.Ratings[0].Value);
+    logger("Rotten Tomato Ratig : ", response.Ratings[1].Value);
+    logger("Country : ", response.Country);
+    logger("Language : ", response.Language);
+    logger("Plot : ", response.Plot);
+    logger("Actors : ", response.Actors);
+    logger(separator, 0);
 }
 
+//this function either prints to screen or writes to file or do both
 function logger(prefix, dataToWrite, whereToWrite) {
     if (whereToWrite === 0) {
         term("^g" + prefix + "^b^+" + dataToWrite + "\n")
     } else if (whereToWrite === 1) {
+        // fileToWriteArray.push(prefix + dataToWrite + "\n")
         writeToFile(prefix + dataToWrite + "\n", logFileName);
     } else {
         term("^g" + prefix + "^b^+" + dataToWrite + "\n")
+        // fileToWriteArray.push(prefix + dataToWrite + "\n")
         writeToFile(prefix + dataToWrite + "\n", logFileName);
     }
 }
 
+//this function writes a passed string to the passed file
 function writeToFile(dataToWrite, fileName) {
     fs.appendFile(fileName, dataToWrite, function (error) {
         if (error) {
