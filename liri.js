@@ -142,7 +142,7 @@ function doMovieThings(secondCommand) {
         });
 }
 function processMovieData(response) {
-    logger(separator, 0);
+    logger("", separator);
     logger("Title : ", response.Title);
     logger("Year : ", response.Year);
     logger("IMDB Rating : ", response.Ratings[0].Value);
@@ -151,7 +151,7 @@ function processMovieData(response) {
     logger("Language : ", response.Language);
     logger("Plot : ", response.Plot);
     logger("Actors : ", response.Actors);
-    logger(separator, 0);
+    logger("", separator);
 }
 
 //this function either prints to screen or writes to file or do both
