@@ -62,12 +62,8 @@ This is a CLI based project that emulates a personal smart assistant. LIRI is li
 ```
 
 ## Video of the application in action
-<figure class="video_container">
-  <video controls="true" allowfullscreen="true" poster="path/to/poster_image.png">
-    <source src="./LiriCLI.mp4" type="video/mp4">
-  </video>
-</figure>
 [![Watch the video](https://i.imgur.com/vKb2F1B.png)](https://youtu.be/sZTFc2UZ21I)
+
 
 
 
