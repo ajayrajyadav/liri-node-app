@@ -52,7 +52,7 @@ This is a CLI based project that emulates a personal smart assistant. LIRI is li
 
 ## Tech used
 - Node.js
-- Twitter NPM Package - https://www.npmjs.com/package/twitter
+- Axios NPM Package   - https://www.npmjs.com/package/axios
 - Spotify NPM Package - https://www.npmjs.com/package/spotify
 - Request NPM Package - https://www.npmjs.com/package/request
 
