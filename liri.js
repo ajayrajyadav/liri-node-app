@@ -27,9 +27,11 @@ main(command, secondCommand);
 function main(command, secondCommand) {
     switch (command) {
         case "spotify-this-song":
+        secondCommand = secondCommand === "" ? secondCommand = "The Sign Ace of Base" : secondCommand;
             doSpotifyThings(secondCommand);
             break;
         case "movie-this":
+            secondCommand = secondCommand === "" ? secondCommand = "Mr. Nobody" : secondCommand;
             doMovieThings(secondCommand);
             break;
         case "concert-this":
